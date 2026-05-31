@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Котоквиз по аналитической химии</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-label="Quiz overview">
+        <div class="hero-copy">
+          <p class="eyebrow">Аналитическая химия</p>
+          <h1>Котоквиз</h1>
+          <div class="mode-grid" aria-label="Режим теста">
+            <button class="mode-button active" type="button" data-mode="all">Все вопросы</button>
+            <button class="mode-button" type="button" data-mode="20">Случайные 20 вопросов</button>
+            <button class="mode-button" type="button" data-mode="10">Случайные 10 вопросов</button>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img src="assets/kittens-hero.png" alt="Pastel kittens resting on soft cushions" />
+        </div>
+      </section>
+
+      <section class="stats-grid" aria-label="Статистика">
+        <article class="stat-card">
+          <span>Вопрос</span>
+          <strong id="questionCounter">1 / 298</strong>
+        </article>
+        <article class="stat-card">
+          <span>Верно</span>
+          <strong id="correctCounter">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Ошибки</span>
+          <strong id="wrongCounter">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Точность</span>
+          <strong id="accuracyCounter">0%</strong>
+        </article>
+      </section>
+
+      <section class="quiz-panel" aria-live="polite">
+        <div class="quiz-topline">
+          <span id="sourceNumber">Вопрос 1</span>
+          <span id="multiHint" hidden>Несколько ответов</span>
+        </div>
+        <h2 id="questionText"></h2>
+        <div class="answers" id="answersList"></div>
+        <div class="actions">
+          <button class="primary-action" type="button" id="checkButton">Проверить</button>
+          <button class="secondary-action" type="button" id="nextButton" disabled>Дальше</button>
+          <button class="ghost-action" type="button" id="restartButton">Сначала</button>
+        </div>
+      </section>
+
+      <section class="result-panel" id="resultPanel" hidden>
+        <p class="eyebrow">Готово</p>
+        <h2 id="resultTitle"></h2>
+        <p id="resultText"></p>
+        <button class="primary-action" type="button" id="againButton">Пройти еще раз</button>
+      </section>
+    </main>
+
+    <script src="scripts/questions.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
